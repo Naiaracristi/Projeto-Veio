@@ -104,6 +104,9 @@ formServico.addEventListener("submit", function (evento) {
     itensExtras,
   });
 });
+document.getElementById("btnImprimir").addEventListener("click", function () {
+  window.print();
+});
 function imprimirResumo(dados) {
   let htmlExtras = "";
   if (dados.itensExtras.length === 0) {
@@ -133,6 +136,9 @@ function imprimirResumo(dados) {
     `;
 
   resumo.style.display = "block";
+  resumo.scrollIntoView({ behavior: "smooth" });
+
+  document.getElementById("btnImprimir").style.display = "inline-block";
   resumo.scrollIntoView({ behavior: "smooth" });
 
   salvarNaPlanilha({
